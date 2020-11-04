@@ -180,6 +180,7 @@ public class Lesson2 {
 
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
+
         }
 
     }

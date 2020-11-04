@@ -14,7 +14,7 @@ public class Lesson3 {
 
         int[] messedUpList1 = {2, 6, 8, 1};                 // sort lists
         int[] messedUpList2 = {12, 7, 6, 8};
-        System.out.println(Arrays.toString(sort(messedUpList2)));
+        System.out.println(Arrays.toString(sort(messedUpList1)));
     }
 
     public static int uusSumma(int x, int y) {              // READY
@@ -52,74 +52,47 @@ public class Lesson3 {
 
         int[] newArray = new int[a.length];
         for (int x = 0; x < a.length; x++) {
-            int smallestNumber = 2147483647;
-            for (int y = 0; y < a.length; y++) {                // find smallest number in array
+            int smallestNumber = Integer.MAX_VALUE;
+            int smallestIndex = 0;
+            for (int y = x; y < a.length; y++) {                // find smallest number in array
                 if (a[y] < smallestNumber) {
                     smallestNumber = a[y];
+                    smallestIndex = y;
                 }
-                newArray[x] = smallestNumber;                   // assign the smallest number to new list
+                int tempNumber = smallestNumber;
+                a[smallestIndex] = a[0];
+                a[0] = tempNumber;
+                newArray[x] = smallestNumber;
+                smallestIndex = 0;
             }
+
         }
         return newArray;                                        // return new list
     }
-/*
-    public static int findSmallestInArray(int[] b) {
-        int smallestNumber = 2147483647;                      // find smallest number in array
-        int smallestIndex = 0;                                 // find smallest number in array
-        for (int y = 0; y < b.length; y++) {
-            if (b[y] < smallestNumber) {
-                smallestNumber = b[y];
-                smallestIndex = y;
-            }
-            return smallestNumber;
-            return smallestIndex;
-        }
-/*
-        int tmp = 0;
-        int largerIndex = 0;
-        int sameIndex = 0;
-        int [] ascendingList = {};
 
-        for (int x = 0; x < a.length; x++) {
-            largerIndex = x+1;
-            sameIndex = x;
-            if (a[sameIndex] >= a[largerIndex]) {
-                ascendingList[sameIndex] = a[largerIndex];
-                ascendingList[largerIndex] = a[sameIndex];
-            }
-            else {
-                ascendingList[sameIndex] = a[sameIndex];
-                ascendingList[largerIndex] = a[largerIndex];
-            }
-            //return new int[0];
-        }
-        return ascendingList;
 
-        }
+    public static String reverseString(String a) {          // TO DO
+        // TODO tagasta string tagurpidi
+        // Näiteks:
+        // a = "Test";
+        // return tseT";
+        System.out.println(a.substring(0, 1));
+        System.out.println(a.substring(1, 2));
+        System.out.println(a.substring(2, 3));
+        System.out.println(a.substring(3, 4));
+        System.out.println(a.substring(2, 4));
+        System.out.println(a.substring(2));
 
-        public static String reverseString (String a){          // TO DO
-            // TODO tagasta string tagurpidi
-            // Näiteks:
-            // a = "Test";
-            // return tseT";
-            System.out.println(a.substring(0, 1));
-            System.out.println(a.substring(1, 2));
-            System.out.println(a.substring(2, 3));
-            System.out.println(a.substring(3, 4));
-            System.out.println(a.substring(2, 4));
-            System.out.println(a.substring(2));
+        String[] array = a.split("e");
+        System.out.println(array[0]);
+        System.out.println(array[1]);
 
-            String[] array = a.split("e");
-            System.out.println(array[0]);
-            System.out.println(array[1]);
-
-            System.out.println(a.indexOf(" "));
-            return "";
-        }
-
-        public static boolean isPrime ( int x){                  // TO DO
-            // TODO tagasta kas sisestatud arv on primaar arv (jagub ainult 1 ja iseendaga)
-            return false;
-        }
-*/
+        System.out.println(a.indexOf(" "));
+        return "";
     }
+
+    public static boolean isPrime(int x) {                  // TO DO
+        // TODO tagasta kas sisestatud arv on primaar arv (jagub ainult 1 ja iseendaga)
+        return false;
+    }
+}
