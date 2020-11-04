@@ -7,14 +7,14 @@ public class Lesson3 {
     public static void main(String[] args) {
         //    System.out.println(uusSumma(9, 9));           // uusSumma function
 
-        int[] myList = {3, 7, 5, 3, 4, 8, 12, 105};         // sum function
+        //int[] myList = {3, 7, 5, 3, 4, 8, 12, 105};         // sum function
         //System.out.println(sum(myList));
 
         //    System.out.println(factorial(7));             // factorial function
 
         int[] messedUpList1 = {2, 6, 8, 1};                 // sort lists
-        int[] messedUpList2 = {7, 6, 8};
-        System.out.println(sort(messedUpList2));
+        int[] messedUpList2 = {12, 7, 6, 8};
+        System.out.println(Arrays.toString(sort(messedUpList2)));
     }
 
     public static int uusSumma(int x, int y) {              // READY
@@ -48,16 +48,14 @@ public class Lesson3 {
     public static int[] sort(int[] a) {                     // TO DO
         // TODO sorteeri massiiv suuruse järgi
         // Näiteks {2, 6, 8, 1}
-        // Väljund {23, 1, 2, 6, 8}
+        // Väljund {12, 7, 6, 8}  <-- test list
 
-        int[] newArray = {};
+        int[] newArray = new int[a.length];
         for (int x = 0; x < a.length; x++) {
             int smallestNumber = 2147483647;
-            int smallestIndex = 0;
             for (int y = 0; y < a.length; y++) {                // find smallest number in array
                 if (a[y] < smallestNumber) {
                     smallestNumber = a[y];
-                    smallestIndex = y;
                 }
                 newArray[x] = smallestNumber;                   // assign the smallest number to new list
             }
