@@ -16,7 +16,9 @@ public class Lesson3 {
         //int[] messedUpList2 = {12, 7, 6, 8};
         //System.out.println(Arrays.toString(sort(messedUpList1)));
 
-        System.out.println(isPrime(13));
+        //System.out.println(isPrime(13));
+
+        System.out.println(reverseString("Hello world!"));
 
     }
 
@@ -79,19 +81,13 @@ public class Lesson3 {
         // Näiteks:
         // a = "Test";
         // return tseT";
-        System.out.println(a.substring(0, 1));
-        System.out.println(a.substring(1, 2));
-        System.out.println(a.substring(2, 3));
-        System.out.println(a.substring(3, 4));
-        System.out.println(a.substring(2, 4));
-        System.out.println(a.substring(2));
-
-        String[] array = a.split("e");
-        System.out.println(array[0]);
-        System.out.println(array[1]);
-
-        System.out.println(a.indexOf(" "));
-        return "";
+        int len = a.length();
+        String reverse = "";
+        reverse = reverse + a.substring(len-1);
+        for (int x = len-1; x > 0; x--) {
+            reverse = reverse + a.substring(x-1,x);
+        }
+    return reverse;
     }
 
     public static boolean isPrime(int x) {                  // READY
