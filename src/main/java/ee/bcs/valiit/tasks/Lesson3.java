@@ -5,80 +5,123 @@ import java.util.*;
 public class Lesson3 {
 
     public static void main(String[] args) {
-        List<Integer> testList = new ArrayList<>();
-        testList.add(4);
-        testList.add(5);
-        testList.add(6);
-        Arrays.toString(new int[0]);
-        for (Integer i : testList) {
-            System.out.println(i);
-        }
+        //    System.out.println(uusSumma(9, 9));           // uusSumma function
 
-        System.out.print(testList);
+        int[] myList = {3, 7, 5, 3, 4, 8, 12, 105};         // sum function
+        //System.out.println(sum(myList));
 
-        System.out.println(reverseString("Test1 Test2"));
-        Map<String, String> testMap = new HashMap<>();
-        test(testMap);
-        Object a;
+        //    System.out.println(factorial(7));             // factorial function
+
+        int[] messedUpList1 = {2, 6, 8, 1};                 // sort lists
+        int[] messedUpList2 = {7, 6, 8};
+        System.out.println(sort(messedUpList2));
     }
 
-    private static void test(Map<String, String> testMap) {
-        testMap.put("test", "test");
-    }
-
-    public static int uusSumma(int x, int y) {
+    public static int uusSumma(int x, int y) {              // READY
         // TODO liida kokku ja tagasta x ja y väärtus
-        return 0;
+        int sum = x + y;
+        return (int) sum;
     }
 
-    public static int sum(int[] x){
-        // Todo liida kokku kõik numbrid massivis x
-        System.out.println("Tere");
-        Scanner scanner = new Scanner(System.in);
-        scanner.hasNext();
-        String a = "1";
-        int b = Integer.parseInt(a);
-        return 0;
+    public static int sum(int[] x) {                        // READY
+        // TODO liida kokku kõik numbrid massivis x
+        int sum = 0;
+        int len = x.length;
+        for (int y = 0; y < len; y++) {
+            sum += x[y];
+        }
+        return sum;
     }
 
-    public static int factorial(int x) {
+    public static int factorial(int x) {                    // READY
         // TODO tagasta x faktoriaal.
         // Näiteks
         // x = 5
-        // return 4*3*2*1 = 24
-        return 0;
+        // return 5*4*3*2*1 = 24
+        int factorial = 1;
+        for (int y = 1; y < x; y++) {
+            factorial *= y;
+        }
+        return factorial;
     }
 
-    public static int[] sort(int[] a) {
+    public static int[] sort(int[] a) {                     // TO DO
         // TODO sorteeri massiiv suuruse järgi
         // Näiteks {2, 6, 8, 1}
-        // Väljund {1, 2, 6, 8}
-        return new int[0];
+        // Väljund {23, 1, 2, 6, 8}
+
+        int[] newArray = {};
+        for (int x = 0; x < a.length; x++) {
+            int smallestNumber = 2147483647;
+            int smallestIndex = 0;
+            for (int y = 0; y < a.length; y++) {                // find smallest number in array
+                if (a[y] < smallestNumber) {
+                    smallestNumber = a[y];
+                    smallestIndex = y;
+                }
+                newArray[x] = smallestNumber;                   // assign the smallest number to new list
+            }
+        }
+        return newArray;                                        // return new list
     }
+/*
+    public static int findSmallestInArray(int[] b) {
+        int smallestNumber = 2147483647;                      // find smallest number in array
+        int smallestIndex = 0;                                 // find smallest number in array
+        for (int y = 0; y < b.length; y++) {
+            if (b[y] < smallestNumber) {
+                smallestNumber = b[y];
+                smallestIndex = y;
+            }
+            return smallestNumber;
+            return smallestIndex;
+        }
+/*
+        int tmp = 0;
+        int largerIndex = 0;
+        int sameIndex = 0;
+        int [] ascendingList = {};
 
-    public static String reverseString(String a) {
-        // TODO tagasta string tagurpidi
-        // Näiteks:
-        // a = "Test";
-        // return tseT";
-        System.out.println(a.substring(0, 1));
-        System.out.println(a.substring(1, 2));
-        System.out.println(a.substring(2, 3));
-        System.out.println(a.substring(3, 4));
-        System.out.println(a.substring(2, 4));
-        System.out.println(a.substring(2));
+        for (int x = 0; x < a.length; x++) {
+            largerIndex = x+1;
+            sameIndex = x;
+            if (a[sameIndex] >= a[largerIndex]) {
+                ascendingList[sameIndex] = a[largerIndex];
+                ascendingList[largerIndex] = a[sameIndex];
+            }
+            else {
+                ascendingList[sameIndex] = a[sameIndex];
+                ascendingList[largerIndex] = a[largerIndex];
+            }
+            //return new int[0];
+        }
+        return ascendingList;
 
-        String[] array = a.split("e");
-        System.out.println(array[0]);
-        System.out.println(array[1]);
+        }
 
-        System.out.println(a.indexOf(" "));
-        return "";
+        public static String reverseString (String a){          // TO DO
+            // TODO tagasta string tagurpidi
+            // Näiteks:
+            // a = "Test";
+            // return tseT";
+            System.out.println(a.substring(0, 1));
+            System.out.println(a.substring(1, 2));
+            System.out.println(a.substring(2, 3));
+            System.out.println(a.substring(3, 4));
+            System.out.println(a.substring(2, 4));
+            System.out.println(a.substring(2));
+
+            String[] array = a.split("e");
+            System.out.println(array[0]);
+            System.out.println(array[1]);
+
+            System.out.println(a.indexOf(" "));
+            return "";
+        }
+
+        public static boolean isPrime ( int x){                  // TO DO
+            // TODO tagasta kas sisestatud arv on primaar arv (jagub ainult 1 ja iseendaga)
+            return false;
+        }
+*/
     }
-
-    public static boolean isPrime(int x){
-        // TODO tagasta kas sisestatud arv on primaar arv (jagub ainult 1 ja iseendaga)
-        return false;
-    }
-
-}
