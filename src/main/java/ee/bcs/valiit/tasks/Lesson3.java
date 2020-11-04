@@ -12,9 +12,12 @@ public class Lesson3 {
 
         //    System.out.println(factorial(7));             // factorial function
 
-        int[] messedUpList1 = {2, 6, 8, 1};                 // sort lists
-        int[] messedUpList2 = {12, 7, 6, 8};
-        System.out.println(Arrays.toString(sort(messedUpList1)));
+        //int[] messedUpList1 = {2, 6, 8, 1};                 // sort lists
+        //int[] messedUpList2 = {12, 7, 6, 8};
+        //System.out.println(Arrays.toString(sort(messedUpList1)));
+
+        System.out.println(isPrime(13));
+
     }
 
     public static int uusSumma(int x, int y) {              // READY
@@ -45,10 +48,10 @@ public class Lesson3 {
         return factorial;
     }
 
-    public static int[] sort(int[] a) {                     // TO DO
+    public static int[] sort(int[] a) {                     // READY
         // TODO sorteeri massiiv suuruse järgi
         // Näiteks {2, 6, 8, 1}
-        // Väljund {12, 7, 6, 8}  <-- test list
+        // Väljund {12, 7, 6, 8}
 
         int[] newArray = new int[a.length];
         for (int x = 0; x < a.length; x++) {
@@ -59,7 +62,7 @@ public class Lesson3 {
                     smallestNumber = a[y];
                     smallestIndex = y;
                 }
-                int tempNumber = smallestNumber;
+                int tempNumber = smallestNumber;                // assigns the smallest value to new array
                 a[smallestIndex] = a[0];
                 a[0] = tempNumber;
                 newArray[x] = smallestNumber;
@@ -91,8 +94,18 @@ public class Lesson3 {
         return "";
     }
 
-    public static boolean isPrime(int x) {                  // TO DO
+    public static boolean isPrime(int x) {                  // READY
         // TODO tagasta kas sisestatud arv on primaar arv (jagub ainult 1 ja iseendaga)
-        return false;
+        int count = 0;
+        for (int y = x; y > 0; y--) {
+            if (x % y == 0) {
+                count++;
+            }
+        }
+        if (count > 2) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
